@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        background: linear-gradient(180deg, #4b2a3a, #3a1f2d);
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1000px;
+        background: white;
+        border-radius: 12px;
+        padding: 25px;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      .section {
+        margin-top: 35px;
+      }
+
+      .toggle-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        margin-top: 10px;
+        transition: 0.2s;
+      }
+
+      .toggle-box:hover {
+        background: #fafafa;
+      }
+
+      .switch {
+        position: relative;
+        width: 45px;
+        height: 25px;
+      }
+
+      .switch input {
+        display: none;
+      }
+
+      .slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #ccc;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+
+      .slider:before {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        left: 3px;
+        top: 3px;
+        background: white;
+        border-radius: 50%;
+        transition: 0.3s;
+      }
+
+      input:checked + .slider {
+        background: #f472b6;
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(22px);
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .card {
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 18px;
+        text-align: center;
+        transition: 0.2s;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .price {
+        font-size: 24px;
+        margin: 10px 0;
+        color: #4b2a3a;
+      }
+
+      button {
+        border: none;
+        padding: 8px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        background: linear-gradient(180deg, #f9a8d4, #f472b6);
+        color: white;
+      }
+
+      button:hover {
+        opacity: 0.85;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 15px;
+        max-width: 400px;
+      }
+
+      input {
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #f472b6;
+      }
+
+      input:disabled {
+        background: #eee;
+      }
+
+      .save {
+        margin-top: 5px;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 18px;
+        }
+
+        h1 {
+          font-size: 22px;
+        }
+
+        .toggle-box {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+        }
+
+        button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Settings</h1>
+
+      <div class="section">
+        <h2>Preferences</h2>
+
+        <div class="toggle-box">
+          <span>Email Notifications</span>
+
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="toggle-box">
+          <span>Dark Mode</span>
+
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Plan & Billing</h2>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Free</h3>
+            <div class="price">₺0 / mo</div>
+            <p>Basic features</p>
+            <button>Select</button>
+          </div>
+
+          <div class="card">
+            <h3>Pro</h3>
+            <div class="price">₺199 / mo</div>
+            <p>More storage</p>
+            <button>Upgrade</button>
+          </div>
+
+          <div class="card">
+            <h3>Enterprise</h3>
+            <div class="price">₺499 / mo</div>
+            <p>All features</p>
+            <button>Contact</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Account</h2>
+
+        <form>
+          <input type="text" placeholder="Full Name" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="New Password" />
+          <input type="text" placeholder="Company" disabled />
+
+          <button class="save">Save Changes</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

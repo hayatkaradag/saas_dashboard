@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <style>
+      :root {
+        --bg-color: #3b2131;
+        --primary: #e91e63;
+        --white: #ffffff;
+        --gray: #f5f5f7;
+        --text: #333;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        font-family: "Inter", system-ui, sans-serif;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        width: 100%;
+
+        max-width: 1000px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .card {
+        background: var(--white);
+        border-radius: 15px;
+        padding: 20px;
+
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .header h1 {
+        color: var(--primary);
+        margin: 0;
+
+        font-size: 24px;
+      }
+
+      .filters {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        border: none;
+        padding: 8px 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 600;
+        background: var(--gray);
+        color: #666;
+        transition: 0.2s;
+      }
+
+      .btn.active {
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      .btn:hover:not(.active) {
+        background: #ebebed;
+      }
+
+      /* Mobil Taşıma Çözümü */
+      .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 500px;
+      }
+
+      th {
+        text-align: left;
+        color: #999;
+        font-size: 12px;
+        padding: 12px;
+        text-transform: uppercase;
+      }
+
+      td {
+        padding: 15px 12px;
+        border-bottom: 1px solid #eee;
+        font-size: 14px;
+        color: var(--text);
+      }
+
+      tr:hover {
+        background: #fafafa;
+      }
+
+      .badge {
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .active-status {
+        background: #e8f5e9;
+        color: #2e7d32;
+      }
+      .invited-status {
+        background: #e3f2fd;
+        color: #1565c0;
+      }
+      .banned-status {
+        background: #ffebee;
+        color: #c62828;
+      }
+
+      .pagination {
+        display: flex;
+        gap: 10px;
+      }
+
+      .page-node {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        background: var(--gray);
+        color: var(--text);
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .page-node.active {
+        background: var(--primary);
+        color: var(--white);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card header">
+        <h1>Users List</h1>
+      </div>
+
+      <div class="card filters">
+        <button class="btn active">All</button>
+        <button class="btn">Active</button>
+        <button class="btn">Invited</button>
+        <button class="btn">Banned</button>
+      </div>
+
+      <div class="card">
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Role</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ayşe Yılmaz</td>
+                <td>ayse@mail.com</td>
+                <td><span class="badge active-status">Active</span></td>
+                <td>Admin</td>
+              </tr>
+              <tr>
+                <td>Mehmet Demir</td>
+                <td>mehmet@mail.com</td>
+                <td><span class="badge invited-status">Invited</span></td>
+                <td>Editor</td>
+              </tr>
+              <tr>
+                <td>Can Tekin</td>
+                <td>can@mail.com</td>
+                <td><span class="badge banned-status">Banned</span></td>
+                <td>Viewer</td>
+              </tr>
+              <tr>
+                <td>Elif Kaya</td>
+                <td>elif@mail.com</td>
+                <td><span class="badge active-status">Active</span></td>
+                <td>Manager</td>
+              </tr>
+              <tr>
+                <td>Selin Aksoy</td>
+                <td>selin@mail.com</td>
+                <td><span class="badge active-status">Active</span></td>
+                <td>Developer</td>
+              </tr>
+              <tr>
+                <td>Burak Şahin</td>
+                <td>burak@mail.com</td>
+                <td><span class="badge invited-status">Invited</span></td>
+                <td>User</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card pagination">
+        <a href="#" class="page-node active">1</a>
+        <a href="#" class="page-node">2</a>
+        <a href="#" class="page-node">3</a>
+      </div>
+    </div>
+  </body>
+</html>

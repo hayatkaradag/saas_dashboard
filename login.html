@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(180deg, #b75f89, #391f2c);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .login-box {
+        width: 600px;
+        height: 400px;
+
+        background: white;
+        padding: 20px;
+        border: 2px solid #e7e1e1;
+        border-radius: 5px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .login-box h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #98175a;
+      }
+
+      .input-group label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #e9b2d6;
+        margin-bottom: 15px;
+        border-radius: 2px;
+      }
+
+      .remember {
+        display: flex;
+
+        align-items: center;
+        margin-bottom: 15px;
+        margin-right: 8px;
+      }
+
+      .login-btn {
+        display: block;
+        width: 100%;
+        background: linear-gradient(
+          180deg,
+          #e8a0c8 0%,
+          #da91b8 35%,
+          #b96592 70%,
+          #a8557c 100%
+        );
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      button:hover {
+        background: #db72c7;
+      }
+
+      .forgot {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 13px;
+        color: #333;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body data-theme="dark">
+    <div class="login-box">
+      <h2>LOGIN</h2>
+
+      <div class="input-group">
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="Please enter your email" />
+      </div>
+
+      <div class="input-group">
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Please enter your password" />
+      </div>
+
+      <div class="remember">
+        <input type="checkbox" />
+        <span>Remember me</span>
+      </div>
+      <a href="users.html" class="login-btn">LogIn</a>
+
+      <div class="forgot">
+        <a href="#">Şifremi Unuttum</a>
+      </div>
+    </div>
+  </body>
+</html>

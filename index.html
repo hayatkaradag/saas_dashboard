@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/seo.png" />
+    <title>Dashboard</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        display: flex;
+        min-height: 100vh;
+        background: #f1f5f9;
+      }
+
+      .sidebar {
+        width: 230px;
+        background: #1e293b;
+        color: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .menu a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 6px;
+        display: block;
+        transition: 0.2s;
+      }
+
+      .menu a:hover {
+        background: #334155;
+      }
+
+      .active {
+        background: #475569;
+      }
+
+      .main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .topbar {
+        height: 65px;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 25px;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .search {
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid #cbd5e1;
+        width: 250px;
+      }
+
+      .profile {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .profile img {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+      }
+
+      .content {
+        padding: 25px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        transition: 0.2s;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+      }
+
+      .card h3 {
+        margin-bottom: 8px;
+      }
+
+      .menu-btn {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      @media (max-width: 850px) {
+        .sidebar {
+          position: fixed;
+          left: -240px;
+          top: 0;
+          height: 100%;
+          transition: 0.3s;
+        }
+
+        .sidebar.show {
+          left: 0;
+        }
+
+        .menu-btn {
+          display: block;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .search {
+          display: none;
+        }
+
+        .content {
+          grid-template-columns: 1fr;
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="sidebar" id="sidebar">
+      <div class="logo">Admin Panel</div>
+
+      <div class="menu">
+        <a class="active" href="#">Dashboard</a>
+        <a href="users.html">Users</a>
+        <a href="settings.html">Settings</a>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="topbar">
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        <input class="search" placeholder="Search..." />
+
+        <div class="profile">
+          <span>Admin</span>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="card">
+          <h3>Total Users</h3>
+          <p>1,284</p>
+        </div>
+
+        <div class="card">
+          <h3>Revenue</h3>
+          <p>$8,420</p>
+        </div>
+
+        <div class="card">
+          <h3>Orders</h3>
+          <p>312</p>
+        </div>
+
+        <div class="card">
+          <h3>Growth</h3>
+          <p>12%</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("sidebar").classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>
